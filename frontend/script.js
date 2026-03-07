@@ -5,6 +5,7 @@ const overlay = document.querySelector('.overlay');
 //const addToCartBtn= document.querySelector('.add-to-cart-btn');
 const cartcount = document.querySelector('.cart-count');
 const cartItemsContainer = document.querySelector(".cart-items");
+const API = "https://ecommerce-project-wosr.onrender.com/api";
 
 const user_id = localStorage.getItem("user_id");
 
@@ -36,7 +37,7 @@ function addToCart(id) {
         window.location.href = "login.html";
         return;
     }
-    fetch("https://ecommerce-project-wosr.onrender.com/api", {
+    fetch('https://ecommerce-project-wosr.onrender.com/api', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -112,7 +113,7 @@ function renderCart() {
 function loadCart() {
     
     const user_id = localStorage.getItem("user_id");
-    fetch(`https://ecommerce-project-wosr.onrender.com/api/cart/${user_id}`)
+    fetch(`${API}/cart/${user_id}`)
         .then(res => res.json())
         .then(data => {
             cartItems = data;
@@ -124,7 +125,7 @@ function loadCart() {
 function removeFromCart(id) {
     
     const user_id = localStorage.getItem("user_id");
-    fetch(`https://ecommerce-project-wosr.onrender.com/api/cart/${user_id}/${id}`, {
+    fetch(`${API}/cart/${user_id}/${id}`, {
         method: "DELETE"
     })
     .then(res => res.json())   // convert response → JSON
@@ -143,7 +144,7 @@ function increaseQuantity(id) {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch(`https://ecommerce-project-wosr.onrender.com/api/cart/increase/${user_id}/${id}`, {
+    fetch(`${API}/cart/increase/${user_id}/${id}`, {
         method: "PATCH"
     })
     .then(res => res.json())
@@ -160,7 +161,7 @@ function decreaseQuantity(id) {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch(`https://ecommerce-project-wosr.onrender.com/api/cart/decrease/${user_id}/${id}`, {
+    fetch(`${API}/cart/decrease/${user_id}/${id}`, {
         method: "PATCH"
     })
     .then(res => res.json())
@@ -175,7 +176,7 @@ function decreaseQuantity(id) {
 
 function loadProducts() {
 
-    fetch("https://ecommerce-project-wosr.onrender.com/api/products")
+    fetch('${API}/products')
         .then(res => res.json())
         .then(products => {
 
@@ -208,7 +209,7 @@ function clearCart() {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch("https://ecommerce-project-wosr.onrender.com/api/cart", {
+    fetch("${API}/cart", {
         method: "DELETE",
         body: JSON.stringify({ user_id: user_id }),
         headers: {
@@ -228,7 +229,7 @@ function clearCart() {
 
 function checkout() {
     const user_id = localStorage.getItem("user_id");
-    fetch("https://ecommerce-project-wosr.onrender.com/api/checkout", {
+    fetch("${API}/checkout", {
         method: "POST",
         headers:{
             "Content-Type":"application/json"
