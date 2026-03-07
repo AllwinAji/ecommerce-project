@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "containers-us-west-123.railway.app",
+    host: "ballast.proxy.rlwy.net:58553",
     user: "root",
     password: "CxtfHDWWpvCoBaCvjaeXPkYzwyWlZSzG",
     database: "railway",
