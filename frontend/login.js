@@ -3,7 +3,7 @@ function login(){
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch("http://localhost:5000/api/login",{
+    fetch("https://ecommerce-project-wosr.onrender.com/api/login",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
