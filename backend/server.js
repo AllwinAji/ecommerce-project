@@ -8,11 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "ballast.proxy.rlwy.net:58553",
+    host: "ballast.proxy.rlwy.net",
     user: "root",
     password: "CxtfHDWWpvCoBaCvjaeXPkYzwyWlZSzG",
     database: "railway",
-    port: 3306
+    port: 58553
 });
 
 app.get("/api/cart/:user_id", (req, res) => {
