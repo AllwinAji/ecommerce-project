@@ -37,7 +37,7 @@ function addToCart(id) {
         window.location.href = "login.html";
         return;
     }
-    fetch(`https://ecommerce-project-wosr.onrender.com/api`, {
+    fetch(`${API}/cart`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
