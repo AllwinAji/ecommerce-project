@@ -10,7 +10,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     host: "containers-us-west-123.railway.app",
     user: "root",
-    password: "${{MYSQL_ROOT_PASSWORD}}",
+    password: "CxtfHDWWpvCoBaCvjaeXPkYzwyWlZSzG",
     database: "railway",
     port: 3306
 });
