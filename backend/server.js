@@ -8,10 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "localhost",
+    host: "containers-us-west-123.railway.app",
     user: "root",
-    password: "terminar5.05",
-    database: "ecommerce"
+    password: "${{MYSQL_ROOT_PASSWORD}}",
+    database: "railway",
+    port: 3306
 });
 
 app.get("/api/cart/:user_id", (req, res) => {
