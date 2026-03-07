@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        
+        <div class="logo">My Shop</div>
+        <div class="nav-buttons">
+            <button class="logout-btn" onclick="logout()">Logout ↩️</button>
+            <a href="orders.html" class="orders-btn">Orders 📦</a>
+            <div class="cart-container">
+                <button class="cart-btn">My Cart 🛒</button>
+                <span class="cart-count">0</span>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <section class="products">
+
+            <section class="product-card">
+                <!-- Product details will be dynamically added here -->
+            </section>
+        </section>
+    </main>
+    <div class="cart">
+        <div class="cart-header">
+            <h2>My Cart</h2>
+            <button class="close-cart-btn">X</button>
+        </div>
+
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+
+        <div class="cart-footer">
+            <p class="cart-total">Total: $0.00</p>
+            <button class="checkout-btn">Checkout</button>
+            <button class="clear-cart-btn">Clear Cart</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
