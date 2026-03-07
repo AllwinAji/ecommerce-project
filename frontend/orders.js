@@ -2,7 +2,7 @@ function loadOrders() {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch(`http://localhost:5000/api/orders/${user_id}`)
+    fetch(`https://ecommerce-project-wosr.onrender.com/api/orders/${user_id}`)
     .then(res => res.json())
     .then(data => {
 
