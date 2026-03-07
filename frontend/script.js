@@ -36,7 +36,7 @@ function addToCart(id) {
         window.location.href = "login.html";
         return;
     }
-    fetch("http://localhost:5000/api/cart", {
+    fetch("https://ecommerce-project.onrender.com/api", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -112,7 +112,7 @@ function renderCart() {
 function loadCart() {
     
     const user_id = localStorage.getItem("user_id");
-    fetch(`http://localhost:5000/api/cart/${user_id}`)
+    fetch(`https://ecommerce-project.onrender.com/api/cart/${user_id}`)
         .then(res => res.json())
         .then(data => {
             cartItems = data;
@@ -124,7 +124,7 @@ function loadCart() {
 function removeFromCart(id) {
     
     const user_id = localStorage.getItem("user_id");
-    fetch(`http://localhost:5000/api/cart/${user_id}/${id}`, {
+    fetch(`https://ecommerce-project.onrender.com/api/cart/${user_id}/${id}`, {
         method: "DELETE"
     })
     .then(res => res.json())   // convert response → JSON
@@ -143,7 +143,7 @@ function increaseQuantity(id) {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch(`http://localhost:5000/api/cart/increase/${user_id}/${id}`, {
+    fetch(`https://ecommerce-project.onrender.com/api/cart/increase/${user_id}/${id}`, {
         method: "PATCH"
     })
     .then(res => res.json())
@@ -160,7 +160,7 @@ function decreaseQuantity(id) {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch(`http://localhost:5000/api/cart/decrease/${user_id}/${id}`, {
+    fetch(`https://ecommerce-project.onrender.com/api/cart/decrease/${user_id}/${id}`, {
         method: "PATCH"
     })
     .then(res => res.json())
@@ -175,7 +175,7 @@ function decreaseQuantity(id) {
 
 function loadProducts() {
 
-    fetch("http://localhost:5000/api/products")
+    fetch("https://ecommerce-project.onrender.com/api/products")
         .then(res => res.json())
         .then(products => {
 
@@ -208,7 +208,7 @@ function clearCart() {
 
     const user_id = localStorage.getItem("user_id");
 
-    fetch("http://localhost:5000/api/cart", {
+    fetch("https://ecommerce-project.onrender.com/api/cart", {
         method: "DELETE",
         body: JSON.stringify({ user_id: user_id }),
         headers: {
@@ -228,7 +228,7 @@ function clearCart() {
 
 function checkout() {
     const user_id = localStorage.getItem("user_id");
-    fetch("http://localhost:5000/api/checkout", {
+    fetch("https://ecommerce-project.onrender.com/api/checkout", {
         method: "POST",
         headers:{
             "Content-Type":"application/json"
